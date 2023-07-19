@@ -41,5 +41,5 @@ void loop() {
 
   SensorSerial.print(String(distanceCm) + "\n");
 
-  delay(1000);
+  delay(2000);
 }
