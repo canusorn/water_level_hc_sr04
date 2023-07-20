@@ -1,3 +1,20 @@
+/*
+การต่อสาย
+
+HC-SR04 -> ESP8266
+trig  -> D6
+echo  -> D5
+vcc   -> 5V
+GND   -> GND
+
+สายระหว่างบอร์ด -> ESP8266
+แดง  ->  V1
+ดำ   ->  GND
+ฟ้า   ->  D3
+
+*/
+
+// ขาต่อเซนเซอร์ HC-SR04
 #define trigPin  D6
 #define echoPin  D5
 

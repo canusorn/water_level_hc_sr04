@@ -1,23 +1,48 @@
-// level in centimeter
-#define tankLevel 400
-#define blueLevel 350
-#define greenLevel 300
-#define yellowLevel 200
-#define redLevel 100
+/*
+การต่อสาย
 
-#define bluePin D4
+จอ LCD -> ESP8266
+SCL  ->  D1
+SDA  ->  D2
+VCC  ->  5v
+GND  ->  GND
+
+led -> ESP8266
+bluePin    ->  D4  
+greenPin   ->  D5
+yellowPin  ->  D6
+redPin     ->  D7
+
+สายระหว่างบอร์ด -> ESP8266
+แดง  ->  V1
+ดำ   ->  GND
+ฟ้า   ->  D3
+
+*/
+
+
+
+// level in centimeter [cm]
+#define tankLevel 400    // ระดับน้ำสูงสุด [cm]
+#define blueLevel 350    // ระดับน้ำแสดงไฟสีฟ้า [cm]
+#define greenLevel 300   // ระดับน้ำแสดงไฟสีเขียว [cm]
+#define yellowLevel 200  // ระดับน้ำแสดงไฟสีเหลือง [cm]
+#define redLevel 100     // ระดับน้ำแสดงไฟสีแดง [cm]
+
+// ขา led
+#define bluePin D4  
 #define greenPin D5
 #define yellowPin D6
 #define redPin D7
 
 #include <SoftwareSerial.h>
 #include <Wire.h>
-#include <LiquidCrystal_PCF8574.h>
-#include <TridentTD_LineNotify.h>
+#include <LiquidCrystal_PCF8574.h>   // ติดตั้งโดยค้นหา LiquidCrystal_PCF8574 จาก library manager ได้เลย
+#include <TridentTD_LineNotify.h>    // ติดตั้งโดยค้นหา TridentTD_LineNotify จาก library manager ได้เลย
 
-#define SSID        "ssid"
-#define PASSWORD    "pass"
-#define LINE_TOKEN  "linetoken"
+#define SSID        "ssid"       // ชื่อไวไฟ
+#define PASSWORD    "pass"       // รหัสผ่าน
+#define LINE_TOKEN  "linetoken"  // โทเค็นไวไฟ
 
 LiquidCrystal_PCF8574 lcd(0x27);  // set the LCD address to 0x27 for a 16 chars and 2 line display
 
